@@ -1,0 +1,173 @@
+/* الخط الأساسي والخلفية */
+body {
+  font-family: "Cairo", sans-serif;
+  background-image: url("44444.png");
+  padding-top: 70px;
+  padding-bottom: 70px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* نص الفوتر */
+
+footer {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* تأثير التنقل في القائمة */
+.navbar-nav .nav-link {
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 5px;
+  padding: 8px 16px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgb(162, 157, 186);
+  color: #0d6efd;
+}
+
+/* زر مخصص */
+.btn-custom {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: #45a049;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* تأثير الوضع الليلي */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #ddd !important;
+  background-image: none !important;
+}
+
+/* تغيير خلفية Navbar في الوضع الليلي */
+body.dark-mode .navbar {
+  background-color: #222 !important;
+}
+
+/* نص الفوتر في الوضع الليلي */
+body.dark-mode footer {
+  color: #aaa !important;
+}
+
+/* قائمة العناصر في الوضع الليلي */
+body.dark-mode .list-group-item {
+  background-color: #333;
+  color: #eee;
+  border: none;
+}
+
+/* بطاقات الكارد في الوضع الليلي */
+body.dark-mode .card {
+  background-color: #222;
+  color: #eee;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  border: none;
+}
+
+/* أزرار الـ Bootstrap الأساسية في الوضع الليلي */
+body.dark-mode .btn-primary {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* شريط التمرير في الوضع الليلي */
+body.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #2c2c2c;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 20px;
+  border: 3px solid #2c2c2c;
+}
+
+/* ستايل النصوص مع روابط hover */
+a.text-info:hover {
+  color: #ffcc00 !important;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* صندوق نص التحذير في نموذج تسجيل الدخول */
+#emailWarning {
+  font-size: 14px;
+  color: #dc3545;
+  margin-top: 4px;
+}
+
+/* تعديل الصورة داخل الكارد */
+.card-img-top {
+  object-fit: cover;
+  height: 150px;
+}
+
+/* تنسيق الجدول */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* نصوص الصفحة */
+.text-white {
+  color: #fff !important;
+}
+
+/* تباعد داخلي للعناصر */
+.mt-4 {
+  margin-top: 1.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* تنسيق زر تبديل الوضع */
+#toggleThemeBtn {
+  font-size: 1.3rem;
+}
+
+/* أزرار Bootstrap - إعدادات عامة */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  footer {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .btn-custom {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+

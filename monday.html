@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>قائمة المهام</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #84b25a, #3a7adf);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      direction: rtl;
+    }
+
+    .todo-container {
+      background-color: white;
+      padding: 30px;
+      margin-top: 80px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(55, 51, 168, 0.2);
+      width: 350px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #383167;
+    }
+
+    .input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #d48c27;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #81ad83;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f4f4f4ca;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    li.completed {
+      text-decoration: line-through;
+      color: #777;
+      background-color: #9bcbca;
+    }
+
+    .actions button {
+      margin-left: 5px;
+      background-color: #7b82a9;
+    }
+
+    .actions button.complete {
+      background-color: #776f93;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="todo-container">
+    <h2>🗒️ To Do List</h2>
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="✍️ أدخل مهمة جديدة">
+      <button onclick="addTask()">➕</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = "📝 " + taskText;
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      const completeBtn = document.createElement("button");
+      completeBtn.textContent = "✅"; // فقط الإيموجي
+      completeBtn.className = "complete";
+      completeBtn.onclick = () => {
+        li.classList.toggle("completed");
+      };
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "🗑️"; // فقط الإيموجي
+      deleteBtn.onclick = () => {
+        li.remove();
+      };
+
+      actions.appendChild(completeBtn);
+      actions.appendChild(deleteBtn);
+      li.appendChild(actions);
+
+      document.getElementById("taskList").appendChild(li);
+      taskInput.value = "";
+      taskInput.focus();
+    }
+  </script>
+
+</body>
+</html>
+
+

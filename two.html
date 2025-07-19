@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>دورة JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="دورة شاملة لتعلم JavaScript من الصفر بطريقة سهلة وتفاعلية."
+  />
+
+  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo&display=swap"
+    rel="stylesheet"
+  />
+
+  
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center text-white">دورة JavaScript</h1>
+
+    
+
+    <div class="row mt-5">
+      <div class="col-8">
+        <p class="text-white">
+          <b>(JavaScript)</b> جافا سكريبت هي لغة برمجة تُستخدم بشكل أساسي في تطوير تطبيقات الويب
+          التفاعلية.
+          <br /><i>Tags</i><br />
+          <b>لغة برمجة ويب تفاعلية:</b> تُستخدم لتنفيذ منطق معين على جانب العميل
+          (المتصفح).<br />
+          <b>الأساس في تطوير الويب:</b> تُعد مع HTML و CSS أساسًا لتطوير الويب
+          الديناميكي.
+        </p>
+      </div>
+      <div class="col-4 px-5">
+        <img src="java.png" height="150" width="150" alt="JavaScript logo" />
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col">
+        <h2 class="text-center text-white">أهداف هذه الدورة</h2>
+        <ul class="list-group">
+          <li class="list-group-item">التعرف على مفهوم JavaScript</li>
+          <li class="list-group-item">تعلم اساسيات JavaScript</li>
+          <li class="list-group-item">طرق إضافة النصوص، الفيديوهات وغيرها من محتويات الويب</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h2 class="text-center text-white">متطلبات هذه الدورة</h2>
+        <ul class="list-group">
+          <li class="list-group-item">متصفح سفاري أو قوقل كروم</li>
+          <li class="list-group-item">محرر نصوص</li>
+          <li class="list-group-item">Visual Studio Code</li>
+        </ul>
+      </div>
+    </div>
+
+    <table class="table table-striped mt-5">
+      <thead>
+        <tr>
+          <th>اليوم</th>
+          <th>وصف الدورة </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>الأحد </td>
+          <td>تحميل Visual Studio Code</td>
+        </tr>
+        <tr>
+          <td>الاثنين</td>
+          <td>مفاهيم جافا سكريبت </td>
+        </tr>
+        <tr>
+          <td>الثلاثاء</td>
+          <td>المتغيرات </td>
+        </tr>
+        <tr>
+          <td>الأربعاء</td>
+          <td>الدوال </td>
+        </tr>
+        <tr>
+          <td>الخميس</td>
+          <td>المشروع </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-4">
+      <p class="text-white fs-5">
+        تُعتبر <strong>JavaScript</strong> من أكثر لغات البرمجة شيوعًا في العالم،
+        حيث تُستخدم في تطوير واجهات المستخدم، التفاعل مع الصفحات، وإنشاء تطبيقات ويب كاملة.
+        تُمكِّن المطورين من إضافة سلوك ديناميكي للمواقع مثل القوائم المنسدلة، النماذج
+        التفاعلية، والتحديثات الفورية دون إعادة تحميل الصفحة. ومع تطور مكتباتها وأطر عملها
+        مثل <em>React</em> و<em>Vue</em>، أصبحت JavaScript أداة أساسية لا غنى عنها لكل
+        مطور ويب حديث.
+        <br />
+        <a
+          href="https://developer.mozilla.org/ar/docs/Web/JavaScript"
+          target="_blank"
+          class="text-info text-decoration-underline"
+          >اقرأ المزيد عن JavaScript هنا</a
+        >.
+      </p>
+    </div>
+
+    <div class="d-flex justify-content-center mb-4">
+      <div class="card" style="width: 18rem">
+        <img src="dow.jpeg" alt="logo" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">JavaScript course</h5>
+          <p class="card-text">
+            JavaScript is a powerful scripting language used to create dynamic web
+            pages.
+          </p>
+          <a href="#" class="btn btn-primary">Go to course</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-5">
+      <button class="btn btn-primary">انضمام</button>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+
+  
+  <script src="script.js" defer></script>
+
+  <script defer>
+    
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("afterbegin", data);
+
+        
+        const toggleBtn = document.getElementById("toggleThemeBtn");
+        if (toggleBtn) {
+          toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+          });
+        }
+      });
+
+    
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML("beforeend", data);
+      });
+  </script>
+
+</body>
+</html>

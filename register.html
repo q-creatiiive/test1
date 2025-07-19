@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>إنشاء حساب</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow">
+          <div class="card-header text-center">
+            <h4>إنشاء حساب جديد</h4>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="emailRegister" class="form-label">البريد الإلكتروني</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailRegister"
+                  placeholder="example@email.com"
+                  required
+                />
+                <div
+                  id="emailRegisterWarning"
+                  class="text-danger mt-1"
+                  style="display: none; font-size: 14px"
+                >
+                  يجب أن يحتوي البريد الإلكتروني على علامة @
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="passwordRegister" class="form-label">كلمة المرور</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordRegister"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">تأكيد كلمة المرور</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="confirmPassword"
+                  placeholder="********"
+                  required
+                />
+                <div
+                  id="passwordMatchWarning"
+                  class="text-danger mt-1"
+                  style="display: none; font-size: 14px"
+                >
+                  كلمة المرور غير متطابقة
+                </div>
+              </div>
+              <button type="submit" class="btn btn-success w-100">إنشاء الحساب</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const emailInput = document.getElementById('emailRegister');
+    const warning = document.getElementById('emailRegisterWarning');
+    const passwordInput = document.getElementById('passwordRegister');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const passwordMatchWarning = document.getElementById('passwordMatchWarning');
+
+    emailInput.addEventListener('input', () => {
+      if (!emailInput.value.includes('@')) {
+        warning.style.display = 'block';
+      } else {
+        warning.style.display = 'none';
+      }
+    });
+
+    // منع الحروف العربية في البريد الإلكتروني
+    emailInput.addEventListener('keypress', (e) => {
+      const arabicRegex = /[\u0600-\u06FF]/;
+      if (arabicRegex.test(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    // التحقق من تطابق كلمة المرور وتأكيدها
+    confirmPasswordInput.addEventListener('input', () => {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        passwordMatchWarning.style.display = 'block';
+      } else {
+        passwordMatchWarning.style.display = 'none';
+      }
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
